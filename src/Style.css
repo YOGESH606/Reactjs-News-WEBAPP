@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+   margin:0 100px 0 100px;
+}
+
+li{
+    display: block; 
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    font-size: larger;
+    color: black;
+}
+.news_photo{
+   height: auto;
+   width: 100%;
+/* even more control with max-width */
+   max-width: 720px;
+   padding: 10px 0 10px 0;
+}
+.title{
+    font-family: "Times New Roman", Times, serif;
+    font-weight:bold;
+    line-height: 100px;
+    text-align :center;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    font-stretch: expanded;
+}
+.heading{
+  font-family: Escrow Condensed,Georgia,serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+  padding: 5px 0 5px 0;
+  margin: 0;
+}
+.txt{
+  font-family: Exchange, Georgia, serif;
+  font-size: 14px;
+  padding: 5px 0 5px 0;
+  margin: 0px;
+}
+.link{
+  text-transform: capitalize;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333;
+    font-family: Retina,Arial,Helvetica,sans-serif;
+
+}
