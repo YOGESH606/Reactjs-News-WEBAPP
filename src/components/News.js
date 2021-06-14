@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import NewsListing from './NewsListing';
+import uuid from 'react-uuid';
 
 const News = ({ query }) => {
 
-    const Api_key = '3c6942bcdab14eb0a8c392f6dd564c8a';
+    const Api_key = 'b26232e59bc64943b0a465249f03ba75';
 
     const [news, setNews] = useState([]);
     
 
     useEffect(() => {
         getNews();
-    });
+    }, [query ]);
 
 
     const getNews = async () => {
@@ -21,6 +22,7 @@ const News = ({ query }) => {
         setNews(data.articles)
         console.log(query);
     }
+    
 
     return (
         <div className='row container'>
@@ -32,7 +34,7 @@ const News = ({ query }) => {
                     {
                         news.map(newNews => (
                             <NewsListing
-                                key={newNews.publishedAt}
+                                key={uuid()}
                                 title={newNews.title}
                                 description={newNews.description}
                                 img={newNews.urlToImage}
