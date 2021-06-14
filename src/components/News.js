@@ -6,16 +6,11 @@ const News = ({ query }) => {
     const Api_key = '3c6942bcdab14eb0a8c392f6dd564c8a';
 
     const [news, setNews] = useState([]);
-
-    const [q, setQ] = useState('');
-
+    
 
     useEffect(() => {
-
         getNews();
-    }, [query]);
-
-
+    });
 
 
     const getNews = async () => {
@@ -37,7 +32,7 @@ const News = ({ query }) => {
                     {
                         news.map(newNews => (
                             <NewsListing
-                                key={newNews.title}
+                                key={newNews.publishedAt}
                                 title={newNews.title}
                                 description={newNews.description}
                                 img={newNews.urlToImage}
