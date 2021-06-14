@@ -2,27 +2,31 @@ import React, { useEffect, useState } from 'react'
 import NewsListing from './NewsListing';
 import uuid from 'react-uuid';
 
+
+
 const News = ({ query }) => {
 
-    const Api_key = 'b26232e59bc64943b0a465249f03ba75';
+
 
     const [news, setNews] = useState([]);
-    
+
 
     useEffect(() => {
+
+
         getNews();
-    }, [query ]);
+    }, [query]);
 
 
     const getNews = async () => {
         const responce = await fetch(
-            `https://newsapi.org/v2/everything?q=${query}&from=2021-06-13&to=2021-06-13&sortBy=popularity&apiKey=${Api_key}`
+            `https://newsapi.org/v2/everything?q=${query}&from=2021-06-13&to=2021-06-13&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`
         );
         const data = await responce.json();
         setNews(data.articles)
         console.log(query);
     }
-    
+
 
     return (
         <div className='row container'>
@@ -44,7 +48,7 @@ const News = ({ query }) => {
                     }
                 </div>
             </div>
-           
+
 
 
 
