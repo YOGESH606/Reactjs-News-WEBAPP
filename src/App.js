@@ -14,7 +14,7 @@ import LifeArts from './components/NewsType/LifeArts';
 import RealEstate from './components/NewsType/RealEstate';
 import Sports from './components/NewsType/Sports';
 import WsjMagazine from './components/NewsType/WsjMagazine';
-console.log(process.env )
+
 const App = () => {
         return (
                 <Router>
