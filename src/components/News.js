@@ -19,7 +19,6 @@ const News = ({ query="world" }) => {
             );
             const data = await responce.json();
             setNews(data.articles)
-            console.log(query);
         }
         getNews();
     }, [query]);
