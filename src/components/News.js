@@ -9,7 +9,7 @@ const News = ({ query = "world" }) => {
 
     const [date, setDate] = useState();
     const [news, setNews] = useState([]);
-    const API_KEY = "fface6909ec9403fb18caa4125b44b9a";
+    const API_KEY = "4b2ac00ea9c74ccc815b5b70edc3c005";
     const d = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate();
 
     useEffect(() => {
@@ -25,9 +25,8 @@ const News = ({ query = "world" }) => {
     }
     
     return (
-        <div className='row container'>
+        <div className='row'>
 
-            <div className="col-12">
                 <div className="row">
                     {
                         news.map(newNews => (
@@ -43,11 +42,6 @@ const News = ({ query = "world" }) => {
                     }
                 </div>
             </div>
-
-
-
-
-        </div>
     )
 }
 
