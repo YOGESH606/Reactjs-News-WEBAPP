@@ -1,14 +1,32 @@
 import React from 'react';
-import moment from 'moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+export default function Col4({ title, description, img,count,author}) {
 
-export default function Col4({ title, description, img, time }) {
+    if(count==1){
+        return (
+            <div className="mb-3">
+                <img src={img} className="news-large-img" alt="description" />
+                <h3 className=" news-heading ">{title}</h3>
+                <p className="news-content">{description}</p>
+                <hr />
+            </div>
+        )
+    }else{
+        return (
+            <div className="mb-3">  
+                {count==2  ?   
 
-    return (
-        <div className="border border-dark mt-1 mb-3">
-            <img src={img} className="news_photo" alt="description" />
-            <p className="text-center heading ">{title}</p>
-            <p className="txt">{description}</p>
-            <p>{moment(time).fromNow()}</p>
-        </div>
-    )
+                <div className="d-flex justify-content-between greyColor">
+                        <h5 className="">OPINION</h5>
+                        <h5><FontAwesomeIcon icon={faChevronRight} /></h5>
+                </div>
+
+                 :""}           
+                <h3 className=" news-heading ">{title}</h3>
+                <p className=""><em>By {author}</em></p>
+                <hr />
+            </div>
+        )
+    }
 }

@@ -1,27 +1,30 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Home from './components/NewsType/Home';
-import World from './components/NewsType/World';
-import Us from './components/NewsType/Us';
-import Politics from './components/NewsType/Politics';
-import Economy from './components/NewsType/Economy';
-import Business from './components/NewsType/Business';
-import Tech from './components/NewsType/Tech';
-import Market from './components/NewsType/Market';
-import Opinion from './components/NewsType/Opinion';
-import LifeArts from './components/NewsType/LifeArts';
-import RealEstate from './components/NewsType/RealEstate';
-import Sports from './components/NewsType/Sports';
-import WsjMagazine from './components/NewsType/WsjMagazine';
+import {
+        Home,
+        World,
+        Us,
+        Politics,
+        Economy,
+        Business,
+        Tech,
+        Market,
+        Opinion,
+        LifeArts,
+        RealEstate,
+        Sports,
+        WsjMagazine
+} from './components/NewsType';
+
 
 const App = () => {
         return (
-                <div className="container">
+                <div>
                         <Router >
 
                                 <Header />
-                                <Switch >
+                                <Switch  >
                                         <Route path="/" exact component={Home} />
                                         <Route path="/World" exact component={World} />
                                         <Route path="/US" exact component={Us} />
@@ -35,9 +38,6 @@ const App = () => {
                                         <Route path="/RealEstate" exact component={RealEstate} />
                                         <Route path="/Sports" exact component={Sports} />
                                         <Route path="/WsjMagazine" exact component={WsjMagazine} />
-
-
-
                                 </Switch>
 
 

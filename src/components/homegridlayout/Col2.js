@@ -1,14 +1,59 @@
 import React from 'react';
-import moment from 'moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock, faComment } from '@fortawesome/free-regular-svg-icons';
 
-export default function Col1({ title, description, img,time }) {
+export default function Col2({ title, description, img, count }) {
 
-    return (
-        <div className="border  border-dark mt-1 mb-3">
-            <img src={img} className="news_photo" alt="description" />
-            <p className="text-center heading ">{title}</p>
-            <p className="txt">{description}</p>
-            <p>{moment(time).fromNow()}</p>
-        </div>
-    )
+    if (count == 1) {
+        return (
+            <div className="col2  mb-3">
+                <img src={img} className="news-large-img" alt="description" />
+                <h5 className="news-stretch-heading">{title}</h5>
+
+                <div className="d-flex justify-content-center ">
+                    <hr className="w-25 border border-dark"></hr>
+                    <div class="square-diamond-icon"></div>
+                    <hr className="w-25 border border-dark"></hr>
+                </div>
+
+                <p className="news-content d-inline">{description}</p>
+                <div className="icons">
+                    <p className="icons-comment-clock "> <FontAwesomeIcon icon={faComment} /> 400 </p>
+                    <p className="icons-comment-clock "> <FontAwesomeIcon icon={faClock} />  5 Min</p>
+                </div>
+                <hr />
+            </div>
+        )
+    }
+    if ((count == 2) || (count == 4)) {
+        return (
+            <div className="mb-3">
+
+                <div className="d-flex">
+                    <h3 className=" news-heading ">{title}</h3>
+                    <img className="p-5" src={img} width="110px" height="75px" className="" alt="description" />
+                </div>
+
+                <p className="news-content">{description} </p>
+
+                <div className="icons">
+                    <p className="icons-comment-clock"> <FontAwesomeIcon icon={faClock} />  4 Min</p>
+                </div>
+
+                <hr />
+            </div>
+        )
+    }
+    if (count == 3) {
+        return (
+            <div className="mb-3">
+                <h3 className="news-heading ">{title}</h3>
+                <p className="news-content">{description} </p>
+                <div className="icons">
+                    <p className="icons-comment-clock"> <FontAwesomeIcon icon={faClock} />  4 Min</p>
+                </div>
+                <hr />
+            </div>
+        )
+    }
 }

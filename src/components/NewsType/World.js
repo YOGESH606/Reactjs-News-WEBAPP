@@ -5,7 +5,7 @@ export default function World() {
 
     return (
         <div className="">
-            <News query={"bitcoin"} />
+            <News query={"global"} />
         </div>
     )
 }

@@ -1,13 +1,40 @@
-import React from 'react'
 import moment from 'moment'
-export default function Col1({ title, description, img,time }) {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment, faClock } from '@fortawesome/free-regular-svg-icons';
+export default function Col1({ title, description, img, time, count }) {
 
-    return (
-        <div className="border border-dark mt-1 mb-3">
-            <img src={img} className="news_photo" alt="description" />
-            <p className="text-center heading ">{title}</p>
-            <p className="txt">{description}</p>
-            <p>{moment(time).fromNow()}</p>
-        </div>
-    )
+    if (count % 2 != 0) {
+        return (
+            <div>
+                <h3 className={count == 1 ? "news-bold-heading" : "news-heading"}>{title}</h3>
+                <p className="txt">{description} </p>
+                <div className="icons">
+                    <p className="icons-comment-clock"> <FontAwesomeIcon icon={faComment} /> 400 </p>
+                    <p className="icons-comment-clock"> <FontAwesomeIcon icon={faClock} />  4 Min</p>
+                </div>
+                <hr />
+            </div>
+        )
+    }
+    else {
+        return (
+            <div>
+                <h3 className=" news-heading ">{title}</h3>
+                <div className="d-flex">
+                    <div>
+                        <p className="news-content">{description} </p>
+                        <div className="icons">
+                            <p className="text-danger">{moment(time).fromNow()}  </p>
+                            <p className="icons-comment-clock"> <FontAwesomeIcon icon={faClock} />  4 Min</p>
+                        </div>
+                    </div>
+                    <img className="" src={img}  className="news-small-img" alt="description" />
+                </div>
+                <hr />
+            </div>
+        )
+
+    }
+
+
 }

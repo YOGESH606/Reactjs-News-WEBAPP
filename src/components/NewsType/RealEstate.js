@@ -3,7 +3,7 @@ import News from '../News';
 export default function RealEstate() {
     return (
         <div>
-            <News query={"RealEstate"}/>
+            <News query={"Real Estate"}/>
         </div>
     )
 }
