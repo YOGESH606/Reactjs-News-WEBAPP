@@ -18,7 +18,7 @@ export default function Home() {
     let count2 = 0;
     let count3 = 0;
 
-
+    /* eslint-disable */
     useEffect(() => {
         const getWorldnews = async () => {
             const responce = await fetch(
@@ -32,8 +32,8 @@ export default function Home() {
         return ()=>{
             setWorldnews([]);
         }
-    }, [API_KEY,d]);
-
+    }, []);
+    /* eslint-enable */
     return (
         <div className='g-container'>
             <hr></hr>

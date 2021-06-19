@@ -6,7 +6,7 @@ const News = ({ query = "world" }) => {
     const [news, setNews] = useState([]);
     const API_KEY = process.env.REACT_APP_API_KEY;
     const d = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate();
-
+    /* eslint-disable */
     useEffect(() => {
         const getNews = async () => {
             const responce = await fetch(
@@ -21,9 +21,9 @@ const News = ({ query = "world" }) => {
             
         }
         getNews()
-    }, [API_KEY, d,query]);
+    }, []);
 
-    
+    /* eslint-enable */
 
     return (
         <div className='g-container'>
