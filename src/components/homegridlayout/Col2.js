@@ -4,7 +4,7 @@ import { faClock, faComment } from '@fortawesome/free-regular-svg-icons';
 
 export default function Col2({ title, description, img, count }) {
 
-    if (count == 1) {
+    if (count === 1) {
         return (
             <div className="col2  mb-3">
                 <img src={img} className="news-large-img" alt="description" />
@@ -12,7 +12,7 @@ export default function Col2({ title, description, img, count }) {
 
                 <div className="d-flex justify-content-center ">
                     <hr className="w-25 border border-dark"></hr>
-                    <div class="square-diamond-icon"></div>
+                    <div className="square-diamond-icon"></div>
                     <hr className="w-25 border border-dark"></hr>
                 </div>
 
@@ -25,13 +25,13 @@ export default function Col2({ title, description, img, count }) {
             </div>
         )
     }
-    if ((count == 2) || (count == 4)) {
+    if ((count === 2) || (count === 4)) {
         return (
             <div className="mb-3">
 
                 <div className="d-flex">
                     <h3 className=" news-heading ">{title}</h3>
-                    <img className="p-5" src={img} width="110px" height="75px" className="" alt="description" />
+                    <img className="p-5" src={img} width="110px" height="75px" alt="description" />
                 </div>
 
                 <p className="news-content">{description} </p>
@@ -44,7 +44,7 @@ export default function Col2({ title, description, img, count }) {
             </div>
         )
     }
-    if (count == 3) {
+    if (count === 3) {
         return (
             <div className="mb-3">
                 <h3 className="news-heading ">{title}</h3>

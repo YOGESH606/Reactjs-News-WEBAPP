@@ -28,7 +28,11 @@ export default function Home() {
             setWorldnews(data.articles)
         }
         getWorldnews();
-    }, []);
+
+        return ()=>{
+            setWorldnews([]);
+        }
+    }, [API_KEY,d]);
 
     return (
         <div className='g-container'>

@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faClock } from '@fortawesome/free-regular-svg-icons';
 export default function Col1({ title, description, img, time, count }) {
 
-    if (count % 2 != 0) {
+    if (count % 2 !== 0) {
         return (
             <div>
-                <h3 className={count == 1 ? "news-bold-heading" : "news-heading"}>{title}</h3>
+                <h3 className={count === 1 ? "news-bold-heading" : "news-heading"}>{title}</h3>
                 <p className="txt">{description} </p>
                 <div className="icons">
                     <p className="icons-comment-clock"> <FontAwesomeIcon icon={faComment} /> 400 </p>
@@ -28,7 +28,7 @@ export default function Col1({ title, description, img, time, count }) {
                             <p className="icons-comment-clock"> <FontAwesomeIcon icon={faClock} />  4 Min</p>
                         </div>
                     </div>
-                    <img className="" src={img}  className="news-small-img" alt="description" />
+                    <img src={img}  className="news-small-img" alt="description" />
                 </div>
                 <hr />
             </div>
