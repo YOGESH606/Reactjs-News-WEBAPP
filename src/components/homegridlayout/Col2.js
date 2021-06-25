@@ -31,7 +31,7 @@ export default function Col2({ title, description, img, count }) {
 
                 <div className="d-flex">
                     <h3 className=" news-heading ">{title}</h3>
-                    <img className="p-5" src={img} width="110px" height="75px" alt="description" />
+                    <img className="news-small-img" src={img}  alt="description" />
                 </div>
 
                 <p className="news-content">{description} </p>

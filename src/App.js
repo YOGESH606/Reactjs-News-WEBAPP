@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import {
         Home,
         World,
@@ -38,7 +39,9 @@ const App = () => {
                                         <Route path="/RealEstate" exact component={RealEstate} />
                                         <Route path="/Sports" exact component={Sports} />
                                         <Route path="/WsjMagazine" exact component={WsjMagazine} />
+                                        
                                 </Switch>
+                                <Footer/>
 
 
                         </Router>

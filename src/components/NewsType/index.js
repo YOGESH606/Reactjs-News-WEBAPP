@@ -13,6 +13,7 @@ import LifeArts from './LifeArts';
 import RealEstate from './RealEstate';
 import Sports from './Sports';
 import WsjMagazine from './WsjMagazine';
+
 export{
     Header,
     Home,
@@ -28,4 +29,5 @@ export{
     RealEstate,
     Sports,
     WsjMagazine
+    
 }

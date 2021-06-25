@@ -22,7 +22,7 @@ export default function Home() {
     useEffect(() => {
         const getWorldnews = async () => {
             const responce = await fetch(
-                `https://newsapi.org/v2/everything?q=Politics&from=${d}&to=${d}&sortBy=popularity&apiKey=${API_KEY}`
+                `https://newsapi.org/v2/everything?q=india&from=${d}&to=${d}&sortBy=popularity&apiKey=${API_KEY}`
             );
             const data = await responce.json();
             setWorldnews(data.articles)
@@ -35,10 +35,10 @@ export default function Home() {
     }, []);
     /* eslint-enable */
     return (
-        <div className='g-container'>
-            <hr></hr>
+        <div className='container'>
+            <hr className="line"></hr>
             <div className='row'>
-                <div className="col-sm-12 col-md-12 col-lg-9">
+                <div className=" col-lg-9">
                     <div className="row">
                         <div className="col-sm-6 col-md-4 vertical-line">
                             {
@@ -56,9 +56,9 @@ export default function Home() {
                                 )
                             }
                         </div>
-                        <div className="col-sm-6 col-md-5 vertical-line">
+                        <div className="col-sm-6 col-md-5 vertical-line1">
                             {
-                                worldnews.slice(4, 7).map(newNews => (
+                                worldnews.slice(4, 8).map(newNews => (
                                     <Col2
                                         key={uuid()}
                                         title={newNews.title}
@@ -70,9 +70,9 @@ export default function Home() {
                                 )
                             }
                         </div>
-                        <div className="col-sm-0 col-md-3 vertical-line">
+                        <div className="col-xs-0 col-md-3 vertical-line2">
                             {
-                                worldnews.slice(7, 11).map(newNews => (
+                                worldnews.slice(8, 13).map(newNews => (
                                     <Col3
                                         key={uuid()}
                                         title={newNews.title}
@@ -87,11 +87,11 @@ export default function Home() {
                 </div>
 
 
-                <div className="col-sm-0 col-md-0 col-lg-3">
+                <div className="col-lg-3">
                     <div className="row">
-                        <div className="col-12">
+                        <div className="d-none d-lg-block col-lg-12">
                             {
-                                worldnews.slice(11, 15).map(newNews => (
+                                worldnews.slice(13, 20).map(newNews => (
                                     <Col4
                                         key={uuid()}
                                         title={newNews.title}
@@ -107,7 +107,9 @@ export default function Home() {
 
                     </div>
                 </div>
+               
             </div>
+            <hr className="border border-top-0 border-dark"></hr>
 
         </div>
     )

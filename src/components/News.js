@@ -26,11 +26,11 @@ const News = ({ query = "world" }) => {
     /* eslint-enable */
 
     return (
-        <div className='g-container'>
-            <hr></hr>
+        <div className='container'>
+            <hr className="line"></hr>
             <div className="row">
                 {
-                    news.map(newNews => (
+                    news.slice(0,20).map(newNews => (
                         <NewsListing
                             key={uuid()}
                             title={newNews.title}
@@ -41,7 +41,9 @@ const News = ({ query = "world" }) => {
                     )
                     )
                 }
+                
             </div>
+            <hr className="border border-top-0 border-dark"></hr>
         </div>
     )
 }
