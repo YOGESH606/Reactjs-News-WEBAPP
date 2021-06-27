@@ -12,8 +12,8 @@ import {
 export default function Home() {
 
     const [worldnews, setWorldnews] = useState([]);
-    const API_KEY = process.env.REACT_APP_API_KEY;
-    const d = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate();
+    //const API_KEY = process.env.REACT_APP_API_KEY;
+    //const d = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate();
     let count1 = 0;
     let count2 = 0;
     let count3 = 0;
@@ -21,15 +21,24 @@ export default function Home() {
     /* eslint-disable */
     useEffect(() => {
         const getWorldnews = async () => {
-            const responce = await fetch(
-                `https://newsapi.org/v2/everything?q=india&from=${d}&to=${d}&sortBy=popularity&apiKey=${API_KEY}`
-            );
+            // const responce = await fetch(
+            //     `https://newsapi.org/v2/everything?q=india&from=${d}&to=${d}&sortBy=popularity&apiKey=${API_KEY}`
+            // );
+            const responce = await fetch("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=india&pageNumber=1&pageSize=20&autoCorrect=true&fromPublishedDate=null&toPublishedDate=null", {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-key": "22675435b6msh88d453eb7c57b68p185113jsn984444b28210",
+                    "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com"
+                }
+            });
             const data = await responce.json();
-            setWorldnews(data.articles)
+            //console.log(data);
+            setWorldnews(data.value)
         }
         getWorldnews();
 
-        return ()=>{
+        
+        return () => {
             setWorldnews([]);
         }
     }, []);
@@ -48,8 +57,8 @@ export default function Home() {
                                         key={uuid()}
                                         title={newNews.title}
                                         description={newNews.description}
-                                        img={newNews.urlToImage}
-                                        time={newNews.publishedAt}
+                                        img={newNews.image.url}
+                                        time={newNews.datePublished}
                                         count={(++count1)}
                                     />
                                 )
@@ -63,7 +72,7 @@ export default function Home() {
                                         key={uuid()}
                                         title={newNews.title}
                                         description={newNews.description}
-                                        img={newNews.urlToImage}
+                                        img={newNews.image.url}
                                         count={(++count2)}
                                     />
                                 )
@@ -76,8 +85,8 @@ export default function Home() {
                                     <Col3
                                         key={uuid()}
                                         title={newNews.title}
-                                        img={newNews.urlToImage}
-                                        time={newNews.publishedAt}
+                                        img={newNews.image.url}
+                                        time={newNews.datePublished}
                                     />
                                 )
                                 )
@@ -96,8 +105,8 @@ export default function Home() {
                                         key={uuid()}
                                         title={newNews.title}
                                         description={newNews.description}
-                                        img={newNews.urlToImage}
-                                        author={newNews.author}
+                                        img={newNews.image.url}
+                                        author={newNews.title}
                                         count={++count3}
                                     />
                                 )
@@ -107,7 +116,7 @@ export default function Home() {
 
                     </div>
                 </div>
-               
+
             </div>
             <hr className="border border-top-0 border-dark"></hr>
 

@@ -11,7 +11,7 @@ export default function Footer() {
                         <li><Link to='/'>subscriber agreement & Term of Use </Link></li>
                         <li><Link to='/'>Your Ad Choice</Link></li>
                     </ul>
-                    <p className="text-center">Copyright ©2021 <a className="d-inline">Dow Jones & Company</a>, Inc. All Rights Reserved.</p>           
+                    <p className="text-center">Copyright ©2021 <a className="d-inline" href="/">Dow Jones & Company</a>, Inc. All Rights Reserved.</p>           
         </div>
     )
 }

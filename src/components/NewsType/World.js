@@ -4,8 +4,8 @@ export default function World() {
 
 
     return (
-        <div className="">
-            <News query={"global"} />
+        <div >
+            <News query={"pakistan"} />
         </div>
     )
 }

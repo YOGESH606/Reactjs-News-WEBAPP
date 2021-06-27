@@ -8,7 +8,7 @@ export default function NewsListing({ title, description, img, time }) {
             <p className="text-center news-heading ">{title}</p>
             <p className="news-content">{description}</p>
             <p className="icons">{moment(time).fromNow()}</p>
-            
+
         </div>
     )
 }

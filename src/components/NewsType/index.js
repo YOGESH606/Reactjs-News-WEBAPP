@@ -28,6 +28,6 @@ export{
     LifeArts,
     RealEstate,
     Sports,
-    WsjMagazine
+    WsjMagazine,
     
 }

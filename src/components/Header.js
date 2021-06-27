@@ -8,7 +8,7 @@ export default function Header() {
             
             <div className="container">
                 
-                <nav class="navbar navbar-expand-lg navbar-light d-block  ">
+                <nav className="navbar navbar-expand-lg navbar-light d-block  ">
                     <div className="header-section">
                       
                         <button className="navbar-toggler header-left" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,8 +36,8 @@ export default function Header() {
                     </div>
                     
 
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                        <ul class="navbar-nav  header-link">
+                    <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+                        <ul className="navbar-nav  header-link">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/World">World </Link></li>
                             <li><Link to="/US">US</Link></li>
