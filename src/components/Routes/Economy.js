@@ -1,9 +1,9 @@
 import React from 'react'
-import News from '../News';
+import News from '../news/News/News';
 export default function Economy() {
     return (
         <div>
-            <News query={"Economy"}/>
+            <News query={"india Economy"}/>
         </div>
     )
 }

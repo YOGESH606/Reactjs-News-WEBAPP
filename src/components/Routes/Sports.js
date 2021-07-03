@@ -1,10 +1,10 @@
 import React from 'react'
-import News from '../News'
+import News from '../news/News/News';
 export default function Sports() {
     console.log("from sport");
     return (
         <div>
-            <News query={"cricket"} />
+            <News query={"india sport"} />
         </div>
     )
 }

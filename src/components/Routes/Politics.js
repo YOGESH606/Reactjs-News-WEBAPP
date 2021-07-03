@@ -1,7 +1,6 @@
 import React from 'react'
-import News from '../News';
+import News from '../news/News/News';
 export default function Politics() {
-    console.log('politicssssssssssssssssssssssss');
     return (
         <div>
             <News query={"india Politic"} />

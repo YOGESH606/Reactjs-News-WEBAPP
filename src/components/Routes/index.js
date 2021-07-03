@@ -1,5 +1,3 @@
-
-import Header from '../Header';
 import Home from './Home';
 import World from './World';
 import Us from './Us';
@@ -8,14 +6,14 @@ import Economy from './Economy';
 import Business from './Business';
 import Tech from './Tech';
 import Market from './Market';
-import Opinion from './Opinion';
-import LifeArts from './LifeArts';
-import RealEstate from './RealEstate';
+import Agriculture from './Agriculture';
 import Sports from './Sports';
-import WsjMagazine from './WsjMagazine';
+import Dalalstreet from './Dalalstreet';
+import Readnews from './Readnews';
+import Searchnews from './Searchnews';
+
 
 export{
-    Header,
     Home,
     World,
     Us,
@@ -24,10 +22,10 @@ export{
     Business,
     Tech,
     Market,
-    Opinion,
-    LifeArts,
-    RealEstate,
+    Agriculture,
     Sports,
-    WsjMagazine,
+    Dalalstreet,
+    Readnews,
+    Searchnews
     
 }
