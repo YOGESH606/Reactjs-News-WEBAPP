@@ -10,29 +10,29 @@ import {
 
 export default function Firstpage({ indiannews }) {
     // console.log('firstpage', indiannews)
-    
+
     return (
         <PageContainer>
-         
+
             <Row1>
                 <Col1>
-                    <Img1 data={indiannews.[1].image.url}>
+                    <Img1 data={indiannews.[12].image.url}>
                         <Imglayer>
                             <NewsLink to={{
                                 pathname: '/Readnews',
                                 state: {
-                                    title: indiannews.[1].title,
-                                    body: indiannews.[1].body,
-                                    img: indiannews.[1].image.url,
+                                    title: indiannews.[12].title,
+                                    body: indiannews.[12].body,
+                                    img: indiannews.[12].image.url,
                                     trendingnews: indiannews.slice(15, 20)
                                 }
                             }}>
-                                <Imageheading> {indiannews.[1].title}</Imageheading>
+                                <Imageheading> {indiannews.[12].title}</Imageheading>
                             </NewsLink>
                         </Imglayer>
                     </Img1>
                 </Col1>
-        
+
                 <Col2>
                     {
                         indiannews.slice(5, 8).map((news) => {
@@ -45,7 +45,7 @@ export default function Firstpage({ indiannews }) {
                                             title: news.title,
                                             body: news.body,
                                             img: news.image.url,
-                                            trendingnews: indiannews.slice(15,20)
+                                            trendingnews: indiannews.slice(15, 20)
                                         }
                                     }}>
                                         <Heading>{news.title}</Heading>
@@ -56,12 +56,12 @@ export default function Firstpage({ indiannews }) {
                         })
                     }
                 </Col2>
-               
+
             </Row1>
 
             <Row2>
                 {
-                    indiannews.slice(10,14).map((news) => {
+                    indiannews.slice(10, 14).map((news) => {
                         return (
                             <Col1>
                                 <CardImg data={news.image.url} height="60%" />
@@ -82,11 +82,11 @@ export default function Firstpage({ indiannews }) {
                     })
                 }
             </Row2>
-            
+
 
         </PageContainer>
     )
-    
+
 }
 
 export const PageContainer = styled.div`
