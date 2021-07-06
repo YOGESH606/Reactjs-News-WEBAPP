@@ -1,11 +1,11 @@
 import React, { lazy , Suspense} from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+import { ClipLoader } from 'react-spinners';
 import Footer from './components/footer/Footer';
 import GlobalStyle from './globalStyle';
 import Navbar from './components/navbar/Navbar';
 import Home from './components/Routes/Home';
-
+import { Spinner } from './globalStyle';
 
 const World = lazy(() => import('./components/Routes/World'));
 const Us = lazy(() => import('./components/Routes/Us'));
@@ -22,12 +22,13 @@ const Searchnews = lazy(() => import('./components/Routes/Searchnews'));
 
 const App = () => {
         return (
-
                 <>
                         <Router >
                                 <GlobalStyle />
                                 <Navbar />
-                               <Suspense fallback={<div>....loading</div>}>
+                                <Suspense fallback={<Spinner>
+                                                      <ClipLoader color='black'  size={80} />
+                                                  </Spinner>}>
                                         <Switch  >
                                                 <Route path="/" exact component={Home} />
                                                 <Route path="/World" exact component={World} />
@@ -48,8 +49,6 @@ const App = () => {
                                 <Footer />
                         </Router>
                 </>
-
-
         )
 }
 export default App

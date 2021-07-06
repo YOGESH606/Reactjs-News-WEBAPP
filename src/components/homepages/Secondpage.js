@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import format from 'date-fns/format';
 import {
     PageContainer,
     Pagetitle,
@@ -24,7 +25,7 @@ export default function Secondpage({ worldnews }) {
             <Row>
                 <Col1>
                     <Img1 data={worldnews.[1].image.url}></Img1>
-                    <Newsdate>{worldnews.[1].datePublished}</Newsdate>
+                    <Newsdate>{format(new Date(worldnews.[1].datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                     <NewsLink to={{
                         pathname: '/Readnews',
                         state: {
@@ -42,7 +43,7 @@ export default function Secondpage({ worldnews }) {
                         worldnews.slice(5, 10).map((news) => {
                             return (
                                 <>
-                                    <Newsdate>{news.datePublished}</Newsdate>
+                                    <Newsdate>{format(new Date(news.datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                                     <NewsLink to={{
                                         pathname: '/Readnews',
                                         state: {
@@ -65,6 +66,7 @@ export default function Secondpage({ worldnews }) {
                         worldnews.slice(10,12).map((news) => {
                             return (
                                 <>
+                                    <Newsdate>{format(new Date(news.datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                                     <CardImg data={news.image.url} height="30%" />
                                     <NewsLink to={{
                                         pathname: '/Readnews',
@@ -77,6 +79,7 @@ export default function Secondpage({ worldnews }) {
                                     }}>
                                         <Heading>{news.title}</Heading>
                                     </NewsLink>
+                                    <Hline></Hline>
                                 </>
                             )
                         })
@@ -89,7 +92,7 @@ export default function Secondpage({ worldnews }) {
 
 
 
-export const Img1 = styled.div`
+const Img1 = styled.div`
   width: 100%;
   height: 80%;
   position: relative;
@@ -116,17 +119,17 @@ export const Row = styled.div`
     }
 `;
 
-export const Col1 = styled.div`
+const Col1 = styled.div`
      padding: 0 10px;
 `;
 
-export const Col2 = styled.div`
+const Col2 = styled.div`
    display: flex;
    flex-direction: column;
     padding: 0 10px;
 `;
 
-export const Col3 = styled.div`
+const Col3 = styled.div`
    display: flex;
    flex-direction: column;
    padding: 0 10px;

@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
  }
 `;
 export const Container = styled.div`
-       margin: 0 120px;
+       margin: 0 100px;
        position: relative;
 
       @media screen and (max-width: 992px) {
@@ -28,7 +28,7 @@ export const Hline = styled.hr`
     margin: 8px 0;
 `;
 export const Spinner = styled.div`
-    height: 80vh;
+    height: 85vh;
     display:flex;
     justify-content: center;
     align-items: center;     
@@ -80,7 +80,7 @@ export const Heading = styled.div`
 
 
 export const Newsdate = styled.p`
-    margin-bottom: 1px;
+    margin:4px 0;
 `;
 
 export const CardImg = styled.div`

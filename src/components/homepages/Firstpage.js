@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import format from 'date-fns/format';
 import {
     Heading,
     Newsdate,
@@ -16,18 +17,19 @@ export default function Firstpage({ indiannews }) {
 
             <Row1>
                 <Col1>
-                    <Img1 data={indiannews.[12].image.url}>
+                    <Img1 data={indiannews.[19].image.url}>
                         <Imglayer>
                             <NewsLink to={{
                                 pathname: '/Readnews',
                                 state: {
-                                    title: indiannews.[12].title,
-                                    body: indiannews.[12].body,
-                                    img: indiannews.[12].image.url,
+                                    title: indiannews.[19].title,
+                                    body: indiannews.[19].body,
+                                    img: indiannews.[19].image.url,
                                     trendingnews: indiannews.slice(15, 20)
                                 }
                             }}>
-                                <Imageheading> {indiannews.[12].title}</Imageheading>
+                                
+                                <Imageheading> {indiannews.[19].title}</Imageheading>
                             </NewsLink>
                         </Imglayer>
                     </Img1>
@@ -38,7 +40,7 @@ export default function Firstpage({ indiannews }) {
                         indiannews.slice(5, 8).map((news) => {
                             return (
                                 <>
-                                    <Newsdate>{news.datePublished}</Newsdate>
+                                    <Newsdate>{format(new Date(news.datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                                     <NewsLink to={{
                                         pathname: '/Readnews',
                                         state: {
@@ -65,7 +67,7 @@ export default function Firstpage({ indiannews }) {
                         return (
                             <Col1>
                                 <CardImg data={news.image.url} height="60%" />
-                                <Newsdate>{news.datePublished}</Newsdate>
+                                <Newsdate>{format(new Date(news.datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                                 <NewsLink to={{
                                     pathname: '/Readnews',
                                     state: {
@@ -89,7 +91,7 @@ export default function Firstpage({ indiannews }) {
 
 }
 
-export const PageContainer = styled.div`
+const PageContainer = styled.div`
    height: 100vh;
    margin: 30px 0;
    font-family:Condensed,Georgia,serif;
@@ -104,7 +106,7 @@ export const PageContainer = styled.div`
     }
 `;
 
-export const Row1 = styled.div`
+const Row1 = styled.div`
 
    display: grid;
    grid-template-columns:60% 40%;
@@ -117,7 +119,7 @@ export const Row1 = styled.div`
     }
 
 `;
-export const Row2 = styled.div`
+const Row2 = styled.div`
    display: grid;
    grid-template-columns:25% 25% 25% 25%;
    height: 45%;
@@ -128,25 +130,25 @@ export const Row2 = styled.div`
     }
 
 `;
-export const Col1 = styled.div`
+const Col1 = styled.div`
     padding: 0 10px;
 `;
 
-export const Col2 = styled.div`
+const Col2 = styled.div`
    display: flex;
    flex-direction: column;
    padding: 0 10px;
     height: 90%;
 `;
 
-export const Imglayer = styled.div`
+const Imglayer = styled.div`
     width: 100%;
     height: 100%;
     background-color: black;
     opacity: 0.7;
 `;
 
-export const Img1 = styled.div`
+const Img1 = styled.div`
   width: 100%;
   height: 85%;
   position: relative;
@@ -158,7 +160,7 @@ export const Img1 = styled.div`
      height: 200px;
     }
 `;
-export const Imageheading = styled.h1`
+const Imageheading = styled.h1`
     bottom: 5%;
     margin:0 30px;
     position: absolute;

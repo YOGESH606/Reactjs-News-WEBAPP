@@ -49,7 +49,7 @@ export default function Footer() {
 
             <FBottom>
                 <Top>
-                    Copyright ©2021 The Thinker News network, Inc. All Rights Reserved.
+                    <p>Copyright ©2021 The Thinker News network, Inc. All Rights Reserved.</p>
                 </Top>
                 <Bottom>
                     Follow The Thinker
@@ -66,29 +66,30 @@ export default function Footer() {
 
     )
 }
-export const FooterContainer = styled.div`
+const FooterContainer = styled.div`
     width: 100%;
     font-family:Condensed,Georgia,serif;
     background: #CCCCCC;
     padding: 30px 0;
 `;
-export const FBottom = styled.div`
+const FBottom = styled.div`
     display: flex;
     justify-content:center;
     align-items: center;
     flex-direction:column;
     padding: 0 100px;
 `;
-export const Top = styled.p`
-    padding: 5px 0;
+const Top = styled.p`
+    margin: 40px 0 20px 0;
+    text-align: center;
 `;
-export const Bottom = styled.div`
+const Bottom = styled.div`
      display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
 `;
-export const SocialMedia = styled.div`
+const SocialMedia = styled.div`
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -97,7 +98,7 @@ export const SocialMedia = styled.div`
     font-size: 30px;
     
 `;
-export const Grid = styled.div`
+const Grid = styled.div`
     font-weight: 300;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
@@ -116,7 +117,7 @@ export const Grid = styled.div`
     }
 `;
 
-export const FooterList = styled.ul`
+const FooterList = styled.ul`
     display:flex;
     flex-direction:column;
     color: rgb(85,85,85);
@@ -127,17 +128,17 @@ export const FooterList = styled.ul`
     }
    
 `;
-export const FooterItem = styled.li`
+const FooterItem = styled.li`
     display:block;
 `;
-export const FooterLink = styled(Link)`
+const FooterLink = styled(Link)`
     color:black;
     line-height: 35px;
      @media screen and (max-width:778px){
         line-height:25px;
     }
 `;
-export const Line = styled.div`
+const Line = styled.div`
      display: none;
      @media screen and (max-width:576px){
        display: block;

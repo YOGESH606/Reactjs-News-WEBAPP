@@ -1,9 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Container } from '../../globalStyle';
-import { Hline } from '../../globalStyle';
-import { NewsLink } from '../../globalStyle';
 import { useEffect } from 'react';
+import format from 'date-fns/format';
+import {
+    Container,
+    Hline,
+    NewsLink, Newsdate
+} from '../../globalStyle';
 
 export default function Readnews(props) {
 
@@ -25,26 +28,25 @@ export default function Readnews(props) {
                 </Column1>
 
                 <Column2>
-                    <h2>Trending</h2>
+                    <Title>Trending</Title>
                     {
                         data.trendingnews.slice(0, 5).map((news) => {
                             return (
-                                <PopularContent>
-                                    <Img src={news.image.url} alt="Image" />
-                                    <NewsLink to={{
-                                        pathname: '/Readnews',
-                                        state: {
-                                            title: news.title,
-                                            body: news.body,
-                                            img: news.image.url,
-                                            trendingnews:data.trendingnews
-                                        }
-                                    }}>
+                                <NewsLink to={{
+                                    pathname: '/Readnews',
+                                    state: {
+                                        title: news.title,
+                                        body: news.body,
+                                        img: news.image.url,
+                                        trendingnews: data.trendingnews
+                                    }
+                                }}>
+                                    <PopularContent>
+                                        <Img1 src={news.image.url} alt="Image" />
+                                        <Newsdate>{format(new Date(news.datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                                         <Heading2> {news.title}</Heading2>
-                                    </NewsLink>
-
-                                    <Hline />
-                                </PopularContent>
+                                    </PopularContent>
+                                </NewsLink>
                             )
                         })
                     }
@@ -57,30 +59,35 @@ export default function Readnews(props) {
     )
 }
 
-export const NewsContainer = styled.div`
+const NewsContainer = styled.div`
     font-family:Condensed,Georgia,serif; 
     display: grid;
     grid-template-columns:55% 35%;
     justify-content: center;
-
     @media screen and (max-width:992px){
         grid-template-columns:65% 35%;
     }
-    @media screen and (max-width:576px){
+    @media screen and (max-width:768px){
         grid-template-columns: 100%;
         
     }
   
 `;
-export const NewslistingFigure = styled.figure`
+const NewslistingFigure = styled.figure`
    width: 100%;
 `;
-export const Img = styled.img`
+const Img = styled.img`
    width: 100%;
    object-fit: cover;
    margin-bottom: 1rem;
 `;
-export const Heading1 = styled.h2`
+const Img1 = styled.img`
+   width: 100%;
+   height:60%;
+   object-fit: cover;
+   margin-bottom: 1rem;
+`;
+const Heading1 = styled.h2`
     font-size: 30px;
     font-weight:bold;
     @media screen and (max-width:992px){
@@ -93,7 +100,7 @@ export const Heading1 = styled.h2`
            font-size: 18px; 
         }
 `;
-export const Heading2 = styled.h2`
+const Heading2 = styled.h2`
     font-size: 20px;
     font-weight:900;
     @media screen and (max-width:992px){
@@ -106,10 +113,12 @@ export const Heading2 = styled.h2`
            font-size: 14px; 
         }
 `;
-export const Column1 = styled.div`
+export const Title = styled.h1`
+    margin: 10px 0;  
+ `;
+const Column1 = styled.div`
     padding:0 2rem;
     border-right: 1px solid rgb(146, 146, 146);
-
     @media screen and (max-width:992px){
            padding:0 1rem;
         }
@@ -118,14 +127,27 @@ export const Column1 = styled.div`
         }
     
 `;
-export const Column2 = styled.div`
+const Column2 = styled.div`
     padding:0 2rem;
     @media screen and (max-width:992px){
            padding:0 1rem;
         }
     
 `;
-export const PopularContent = styled.div`
+const PopularContent = styled.div`
     margin-bottom: 2rem;
-`;
+    position: relative;
+    border: 1px solid #636363;
+    padding: 10px;
+    height: 400px;
 
+    @media screen and (max-width:992px){
+           height: auto;
+        }
+
+
+    &:hover {
+     transition: all 0.3s ease-out;
+     box-shadow: 0px 5px 9px rgba(38, 38, 38, 0.9);
+     top: -5px;
+`;

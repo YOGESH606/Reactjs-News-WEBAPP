@@ -31,17 +31,22 @@ export default function Navbar() {
             <Nav>
                 <SearchModal show={modal}>
                     <SearchModalWrapper>
-                        <ModalInput value={value} onChange={handlevalue} size="30" />
-                        <Link to={
-                            {
-                                pathname: '/Searchnews',
-                                state: {
-                                    query: value
-                                }
-                            }
-                        }>
-                            <ModalButton onClick={handlemodal}>Search</ModalButton>
-                        </Link>
+                        <ModalInput value={value} type="text" placeholder="Search.." onChange={handlevalue} size="30" />
+                        {
+                            value ? 
+                                <Link to={
+                                    {
+                                        pathname: '/Searchnews',
+                                        state: {
+                                            query: value
+                                        }
+                                    }
+                                }>
+                                    <ModalButton onClick={handlemodal}>Search</ModalButton>
+                                </Link>
+                                :
+                                <ModalButton>Search</ModalButton>
+                        }
                         <ModalButton onClick={handlemodal}>Cancel</ModalButton>
                     </SearchModalWrapper>
                 </SearchModal>
@@ -54,9 +59,9 @@ export default function Navbar() {
                     <NavHeading>THE THINKER</NavHeading>
 
                     <NavBtnLink>
-                        <div className="btn">Subscribe</div>
-                        <div className=" pt-2 pt-md-1">|</div>
-                        <div className="btn">SignIn</div>
+                        <div className="">Subscribe</div>
+                        <div className="">|</div>
+                        <div className="">SignIn</div>
                     </NavBtnLink>
 
                     <NavSearchIcon onClick={handlemodal} >
@@ -93,7 +98,7 @@ export default function Navbar() {
                         <MenuLink to='/Agriculture'>Agriculture</MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink to='/Sports'>sports</MenuLink>
+                        <MenuLink to='/Sports'>Sports</MenuLink>
                     </MenuItem>
                     <SearchButton onClick={handlemodal}>
                         <Search>Search</Search>
@@ -222,10 +227,14 @@ export const MenuItem = styled.li`
 export const MenuLink = styled(Link)`
     color: black;
     text-decoration:none;
-    font-size: 17px;
+    font-size: 18px;
     padding: 0 10px;
+    font-family:Condensed,Georgia,serif;
     &:hover{
         color: red;
+    }
+    @media screen and (max-width:992px){
+        font-size: 17px;
     }
  `;
 export const SearchButton = styled.div`
@@ -268,7 +277,6 @@ export const SearchModalWrapper = styled.div`
 `;
 export const ModalInput = styled.input`
     margin:0 20px;
-    border-radius: 7px;
     border: none;
     text-align:center;
     padding: 5px;
@@ -276,13 +284,14 @@ export const ModalInput = styled.input`
 `;
 export const ModalButton = styled.button`
     font-size: 18px;
+    font-weight: 700;
     background-color: white;
     color:black;
     cursor: pointer;
-    border-radius: 7px;
+    border-radius: 2px;
     margin:0 10px;
     border:none;
-    padding: 3px 10px;
+    padding: 5px 10px;
     font-family: Arial,Helvetica,sans-serif;
 
     @media screen and (max-width:768px){

@@ -2,59 +2,76 @@ import React from 'react';
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Hline } from "../../../globalStyle";
+import { Newsdate } from '../../../globalStyle';
+import format from 'date-fns/format';
 
-export default function NewsListing({ title, description, img, time, body ,trendingnews}) {
-    return (
+export default function NewsListing({ title, description, img, date, body, trendingnews }) {
+  return (
+    <NewsLink to={{
+      pathname: '/Readnews',
+      state: {
+        title: title,
+        body: body,
+        img: img,
+        description:description,
+        trendingnews: trendingnews,
+        date: format(new Date(date), 'do.MMM.yyyy')
+      }
+    }}>
         <NewslistingContainer>
-            <NewslistingFigure>
+              <NewslistingFigure>
                 <Img src={img} alt={"description"} />
-            </NewslistingFigure>
-            <NewsLink to={{
-                pathname: '/Readnews',
-                state:{
-                    title:title ,
-                    body:body,
-                    img:img,
-                    trendingnews:trendingnews
-                }
-            }}>
-                <Heading>{title}</Heading>
-            </NewsLink>
-            <Content>{description}</Content>
-            <Hline></Hline>
-        </NewslistingContainer>
+              </NewslistingFigure>
+              <Newsdate>{format(new Date(date), 'do.MMM.yyyy')}</Newsdate>
+              <Heading>{title}</Heading>
+              <Content>{description}</Content>
+              <Hline></Hline>
+      </NewslistingContainer>
+    </NewsLink>
 
-    )
+  )
 }
 
 
 
-export const NewslistingContainer = styled.div`
+ const NewslistingContainer = styled.div`
    border-radius: 10px;
    position: relative;
-   padding: 7px;
+   padding: 5px;
    height: 400px;
    overflow: hidden;
+   cursor: pointer;
+   border: 1px solid #636363;
+   
+ 
+
+   &:hover {
+    transition: all 0.3s ease-out;
+    box-shadow: 0px 5px 9px rgba(38, 38, 38, 0.9);
+    top: -5px;
+    
+  }
    @media screen and (max-width:576px){
         height: 300px;
+        margin: 7px 0;
     }
 `;
 
-export const NewslistingFigure = styled.figure`
+ const NewslistingFigure = styled.figure`
   width: 100%;
   height: 40%;
   @media screen and (max-width:576px){
-       height: 50%;
+       height: 60%;
     }
 `;
 
-export const Img = styled.img`
+ const Img = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
     
 `;
-export const Heading = styled.h2`
+ const Heading = styled.h2`
   font-family:Condensed,Georgia,serif;
   font-size:1.1rem;
   line-height:22px;
@@ -63,11 +80,11 @@ export const Heading = styled.h2`
   height: 24%;
   overflow: hidden;
   @media screen and (max-width:576px){
-       height: 33%;
+       height: 40%;
     }
   
 `;
-export const Content = styled.p`
+ const Content = styled.p`
   font-family: Exchange, Georgia, serif;
   font-size: 0.9rem;
   margin: 0px;
@@ -79,10 +96,9 @@ export const Content = styled.p`
       display: none;
     }
 `;
-export const NewsLink = styled(Link)`
+ const NewsLink = styled(Link)`
     color: black;
     &:hover {
-    color: red;
     text-decoration:none;
   }
 `;

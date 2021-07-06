@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import format from 'date-fns/format';
 import {
     PageContainer,
     Pagetitle,
@@ -24,7 +25,7 @@ export default function Thirdpage({ politicsnews }) {
             <Row1>
                 <Col1>
                     <Img1 data={politicsnews.[1].image.url}></Img1>
-                    <Newsdate>{politicsnews.datePublished}</Newsdate>
+                    <Newsdate>{format(new Date(politicsnews.[1].datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                     <NewsLink to={{
                         pathname: '/Readnews',
                         state: {
@@ -39,7 +40,7 @@ export default function Thirdpage({ politicsnews }) {
                 </Col1>
                 <Col2>
                     <Img1 data={politicsnews.[2].image.url}></Img1>
-                    <Newsdate>{politicsnews.datePublished}</Newsdate>
+                    <Newsdate>{format(new Date(politicsnews.[2].datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                     <NewsLink to={{
                         pathname: '/Readnews',
                         state: {
@@ -59,7 +60,7 @@ export default function Thirdpage({ politicsnews }) {
                         return (
                             <Col>
                                 <CardImg data={news.image.url} height="60%" />
-                                <Newsdate>{news.datePublished}</Newsdate>
+                                <Newsdate>{format(new Date(news.datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                                 <NewsLink to={{
                                     pathname: '/Readnews',
                                     state: {
@@ -82,7 +83,7 @@ export default function Thirdpage({ politicsnews }) {
 }
 
 
-export const Img1 = styled.div`
+const Img1 = styled.div`
   width: 100%;
   height: 75%;
   position: relative;
@@ -95,16 +96,7 @@ export const Img1 = styled.div`
     }
 `;
 
-export const Imageheading = styled.h2` 
-    margin:0 30px;
-    color:black;
-    font-weight: bold;
-    font-size: 25px;
-    @media screen and (max-width:576px){
-     font-size: 20px;
-    }
-`;
-export const Row1 = styled.div`
+const Row1 = styled.div`
    display: grid;
    grid-template-columns:50% 50%;
    height: 44%;
@@ -116,32 +108,33 @@ export const Row1 = styled.div`
      height: 50%;
     }
 `;
-export const Col1 = styled.div`
+const Col1 = styled.div`
      padding: 0 10px;
      @media screen and (max-width:992px){
      padding:10px 0;
      border-bottom: 1px solid black;
     }
 `;
-export const Col2 = styled.div`
+const Col2 = styled.div`
      padding:0 10px ;
      @media screen and (max-width:992px){
-     paddin:10px 0;
+     padding:10px 0;
      border-bottom: 1px solid black;
     }
 `;
-export const Row2 = styled.div`
+const Row2 = styled.div`
    display: grid;
    grid-template-columns:25% 25% 25% 25%;
    height: 44%;
    justify-content  :center ;
+   margin-top: 20px;
 
    @media screen and (max-width:992px){
      grid-template-columns:100%;
      height: 50%;  
     }
 `;
-export const Col = styled.div`
+const Col = styled.div`
      padding: 0 10px; 
      @media screen and (max-width:992px){
      padding:10px 0px;  

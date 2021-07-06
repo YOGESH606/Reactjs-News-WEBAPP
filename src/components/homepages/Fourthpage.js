@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import format from 'date-fns/format';
 import {
     PageContainer,
     Pagetitle,
@@ -29,7 +30,7 @@ export default function Fourthpagepage({ businessnews }) {
                             return (
                                 <>
                                     <CardImg data={news.image.url} height="30%"/>
-                                    <Newsdate>{news.datePublished}</Newsdate>
+                                    <Newsdate>{format(new Date(news.datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                                     <NewsLink to={{
                                         pathname: '/Readnews',
                                         state: {
@@ -53,7 +54,7 @@ export default function Fourthpagepage({ businessnews }) {
                         businessnews.slice(10, 15).map((news) => {
                             return (
                                 <>
-                                    <Newsdate>{news.datePublished}</Newsdate>
+                                    <Newsdate>{format(new Date(news.datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                                     <NewsLink to={{
                                         pathname: '/Readnews',
                                         state: {
@@ -73,7 +74,7 @@ export default function Fourthpagepage({ businessnews }) {
                 </Col2>
                 <Col3>
                     <Img1 data={businessnews.[1].image.url}></Img1>
-                    <Newsdate>{businessnews.datePublished}</Newsdate>
+                    <Newsdate>{format(new Date(businessnews.[1].datePublished.slice(0, 10)), 'do.MMM.yyyy')}</Newsdate>
                     <NewsLink to={{
                         pathname: '/Readnews',
                         state: {
@@ -98,7 +99,7 @@ export default function Fourthpagepage({ businessnews }) {
 
 
 
-export const Img1 = styled.div`
+const Img1 = styled.div`
   width: 100%;
   height: 70%;
   position: relative;
@@ -110,7 +111,7 @@ export const Img1 = styled.div`
      height: 300px;
     }
 `;
-export const Row = styled.div`
+const Row = styled.div`
    margin: 30px 0;
    display: grid;
    grid-template-columns:25% 25% 50%;
@@ -123,13 +124,13 @@ export const Row = styled.div`
      height: 100%;
     }
 `;
-export const Col1 = styled.div`
+const Col1 = styled.div`
      padding: 0 10px;
 `;
-export const Col2 = styled.div`
+const Col2 = styled.div`
    padding: 0 10px;
 `;
-export const Col3 = styled.div`
+const Col3 = styled.div`
    padding: 0 10px;
 `;
 
