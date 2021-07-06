@@ -141,12 +141,12 @@ export const NavBarIcon = styled.button`
         top: 0;
         left:0;
         margin-top:12px ;
-        padding:1px 9px;
+        padding:1px 6px;
         background-color: white;
         display: inline-block;
-        color: #b0a5a0;
+        color: black;
         border: 0.5px solid #b0a5a0;
-        font-size: 18px;
+        font-size: 25px;
     }
 `;
 
@@ -264,9 +264,8 @@ export const SearchModal = styled.div`
 	background: rgba(0,0,0,0.8);
 `;
 export const SearchModalWrapper = styled.div`
-    position: absolute;
-    margin-top: 100px;
     width: 90%;
+    margin: 100px auto 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -78,6 +78,7 @@ export default function Firstpage({ indiannews }) {
                                     }
                                 }}>
                                     <Heading>{news.title}</Heading>
+                                    <Hline></Hline>
                                 </NewsLink>
                             </Col1>
                         )
