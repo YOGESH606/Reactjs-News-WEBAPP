@@ -7,7 +7,7 @@ export const FetchNews = (query) => {
     return (
         axios.get(url, {
             headers: {
-                'x-rapidapi-key': process.env.REACT_APP_API_KEY,
+                'x-rapidapi-key': 'e441dc3763mshb311bff847e17edp10494cjsnd68579dd6ad6',
                 'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
             }
         }))
