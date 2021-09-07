@@ -6,7 +6,7 @@ import { ClipLoader } from 'react-spinners';
 import {
     Spinner,
     Container,
-     Hline
+    Hline
 } from '../../../globalStyle';
 import { FetchNews } from '../../../api/Api';
 
@@ -24,6 +24,8 @@ export default function News({ query }) {
             setLoading(false);
         }
         Fetchdata();
+
+        // Fetchdata();
     }, [query]);
 
 
@@ -37,7 +39,7 @@ export default function News({ query }) {
                 loading
                     ?
                     <Spinner>
-                        <ClipLoader color='black' loading={loading} size={80} />
+                        <ClipLoader color='red' loading={loading} size={30} />
                     </Spinner>
                     :
                     <div>
@@ -74,8 +76,9 @@ export default function News({ query }) {
 export const NewsContainer = styled.div`
   display: grid;
   justify-content: center;
-  grid-template-columns:auto auto auto auto; /*Make the grid smaller than the container*/
+  grid-template-columns:25% 25% 25% 25%; /*Make the grid smaller than the container*/
   grid-gap: 13px;
+  margin-bottom: 20px;
   @media screen and (max-width:992px){
             grid-template-columns:auto auto auto;
         }

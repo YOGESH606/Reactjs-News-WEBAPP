@@ -33,7 +33,7 @@ export default function Navbar() {
                     <SearchModalWrapper>
                         <ModalInput value={value} type="text" placeholder="Search.." onChange={handlevalue} size="30" />
                         {
-                            value ? 
+                            value ?
                                 <Link to={
                                     {
                                         pathname: '/Searchnews',
@@ -71,34 +71,34 @@ export default function Navbar() {
 
                 <Menu click={click} onClick={handleclick} >
                     <MenuItem>
-                        <MenuLink to='/'>Home</MenuLink>
+                        <MenuLink to='/'><span>HOME</span></MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink to='/World'>World</MenuLink>
+                        <MenuLink to='/World'><span>WORLD</span></MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink to='/US'>US</MenuLink>
+                        <MenuLink to='/US'><span>US</span></MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink to='/Politics'>Politics</MenuLink>
+                        <MenuLink to='/Politics'><span>POLITICS</span></MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink to='/Economy'>Economy</MenuLink>
+                        <MenuLink to='/Economy'><span>ECONOMY</span></MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink to='/Business'>Business</MenuLink>
+                        <MenuLink to='/Business'><span>BUSINESS</span></MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink to='/Tech'>Technology</MenuLink>
+                        <MenuLink to='/Tech'><span>TECHNOLOGY</span></MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink to='/Dalalstreet'>Dalal Street</MenuLink>
+                        <MenuLink to='/Dalalstreet'><span>DALAL STREET</span></MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink to='/Agriculture'>Agriculture</MenuLink>
+                        <MenuLink to='/Agriculture'><span>AGRICULTURE</span></MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink to='/Sports'>Sports</MenuLink>
+                        <MenuLink to='/Sports'><span>SPORTS</span></MenuLink>
                     </MenuItem>
                     <SearchButton onClick={handlemodal}>
                         <Search>Search</Search>
@@ -163,7 +163,8 @@ export const NavSearchIcon = styled.div`
         }    
 `;
 export const NavHeading = styled.h1`
-    font-size: 35px;
+    font-size: 45px;
+    margin-top:5px;
     font-weight:900;
     transform: scale(.7, 1.4);
     @media only screen and (max-width:992px){
@@ -225,16 +226,44 @@ export const MenuItem = styled.li`
     display: block;
 `;
 export const MenuLink = styled(Link)`
+
+  span{
     color: black;
     text-decoration:none;
-    font-size: 18px;
-    padding: 0 10px;
+    font-size: 16px;
     font-family:Condensed,Georgia,serif;
+    position: relative;
+
+    &:after{
+    color: black;
+    content: "";
+    height: 2px;
+    background:black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    opacity: 0;
+    transform:scaleX(0);
+    transform-origin:left center;
+    transition:all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    }
+  }
+
     &:hover{
         color: red;
+        span:after{
+                transform: scaleX(1);
+                opacity: 1;
+            }
     }
     @media screen and (max-width:992px){
-        font-size: 17px;
+        span{
+            font-size: 14px;
+            &:after{
+                bottom:-2px;
+            }
+        }
     }
  `;
 export const SearchButton = styled.div`

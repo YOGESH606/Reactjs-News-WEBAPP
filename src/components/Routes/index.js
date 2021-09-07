@@ -11,7 +11,7 @@ import Sports from './Sports';
 import Dalalstreet from './Dalalstreet';
 import Readnews from './Readnews';
 import Searchnews from './Searchnews';
-
+import LoginPage from './LoginPage';
 
 export{
     Home,
@@ -26,6 +26,7 @@ export{
     Sports,
     Dalalstreet,
     Readnews,
-    Searchnews
+    Searchnews,
+    LoginPage,
     
 }

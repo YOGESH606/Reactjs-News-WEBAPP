@@ -42,7 +42,7 @@ export default function Homeclone() {
             {
                 loading
                     ?   <Spinner>
-                            <ClipLoader color='black' loading={loading} size={80} />
+                            <ClipLoader color='black' loading={loading} size={30} />
                         </Spinner>
                     : <>
                         {indiannews.length ? <Firstpage indiannews={indiannews} /> : ""}

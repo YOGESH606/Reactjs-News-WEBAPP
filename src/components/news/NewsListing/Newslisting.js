@@ -20,7 +20,7 @@ export default function NewsListing({ title, description, img, date, body, trend
     }}>
         <NewslistingContainer>
               <NewslistingFigure>
-                <Img src={img} alt={"description"} />
+              <Img src={img} alt={"description"} />
               </NewslistingFigure>
               <Newsdate>{format(new Date(date), 'do.MMM.yyyy')}</Newsdate>
               <Heading>{title}</Heading>
@@ -41,14 +41,18 @@ export default function NewsListing({ title, description, img, date, body, trend
    height: 400px;
    overflow: hidden;
    cursor: pointer;
-   border: 1px solid #636363;
-   
- 
+   //border: 1px solid #636363;
+   border:3px solid rgba(249, 249, 249, 0.1);
+   box-shadow:rgb(0 0 0 / 69%) 0px 26px 30px -10px , rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+   transition:all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 
    &:hover {
-    transition: all 0.3s ease-out;
+    /* transition: all 0.3s ease-out;
     box-shadow: 0px 5px 9px rgba(38, 38, 38, 0.9);
-    top: -5px;
+    top: -5px; */
+    transform: scale(1.05);
+    box-shadow:rgb(0 0 0 / 80%) 0px 40px 58px -16px , rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+    border-color:rgba(249, 249, 249, 0.1);
     
   }
    @media screen and (max-width:576px){

@@ -28,7 +28,7 @@ export default function Firstpage({ indiannews }) {
                                     trendingnews: indiannews.slice(15, 20)
                                 }
                             }}>
-                                
+
                                 <Imageheading> {indiannews.[19].title}</Imageheading>
                             </NewsLink>
                         </Imglayer>
@@ -78,7 +78,7 @@ export default function Firstpage({ indiannews }) {
                                     }
                                 }}>
                                     <Heading>{news.title}</Heading>
-                                    <Hline></Hline>
+                                    
                                 </NewsLink>
                             </Col1>
                         )
@@ -108,7 +108,6 @@ const PageContainer = styled.div`
 `;
 
 const Row1 = styled.div`
-
    display: grid;
    grid-template-columns:60% 40%;
    height: 55%;
@@ -118,7 +117,6 @@ const Row1 = styled.div`
      grid-template-columns:100%;
      height: 50%;
     }
-
 `;
 const Row2 = styled.div`
    display: grid;
@@ -129,7 +127,6 @@ const Row2 = styled.div`
      grid-template-columns:100%;
      height: 50%;
     }
-
 `;
 const Col1 = styled.div`
     padding: 0 10px;
